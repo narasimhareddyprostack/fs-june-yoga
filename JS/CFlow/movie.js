@@ -3,5 +3,6 @@
 if ("Salman") {
     console.log("Still Bachelor")
 } else {
+    
     console.log("only Movies")
 }
