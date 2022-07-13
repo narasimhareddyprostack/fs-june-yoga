@@ -1,0 +1,7 @@
+Fat Arrow Adv 
+1.Concise Code / Shorter code 
+2.Implicit return 
+funtion only one return statement, no need to use 
+
+3. 
+4.
