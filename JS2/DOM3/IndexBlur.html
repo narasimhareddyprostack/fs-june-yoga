@@ -1,0 +1,22 @@
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <input type="text" onfocus="onFocus_Fun()" id="abc" style="background-color: aqua;" />
+    <script>
+        function onFocus_Fun() {
+            //alert("Hello")
+            document.getElementById('abc').style.backgroundColor = "green"
+        }
+        function onblur_Fun() {
+            document.getElementById('abc').style.backgroundColor = "red"
+            //alert("Hello,GM")
+        }
+
+    </script>
+</body>
+
+</html>
