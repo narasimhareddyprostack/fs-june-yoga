@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <title>calculator</title>
+    <!--using css -->
+    <style>
+        input[type=button] {
+            background-color: rgb(96, 98, 98);
+            color: #1616a5;
+            width: 70px;
+            height: 70px;
+            font-size: 15px;
+            text-align: center;
+            box-sizing: inherit;
+
+        }
+
+        input:hover {
+            background-color: brown;
+        }
+
+        input:active {
+            background-color: darkgreen;
+        }
+
+        button {
+            background-color: aqua;
+            color: #ee82ee;
+            width: 90px;
+            height: 90px;
+            font-size: 10px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: absolute;
+            left: 40%;
+            top: 20%;
+            border-radius: 8px 0;
+            transform: translate(-50% -50%);
+            background: rgb(24, 116, 97);
+            box-shadow: rgba(33, 97, 193, 0.4);
+            display: flex;
+
+        }
+
+        h3 {
+            text-align: center;
+            color: #1616a5;
+            position: relative;
+            top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>Calculator</h3>
+    <div class="container">
+        <!--using table tags-->
+        <table border="3">
+            <tr>
+                <td colspan="2"><input type="text" id="result" /></td>
+                <!-- taking Id(result) hole scripting function-->
+                <td><input type="button" value="del" onclick="del()" /></td>
+                <td><input type="button" value="*" onclick="gopi()" /></td>
+
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="gopi()" /></td>
+                <td><input type="button" value="2" onclick="gopi()" /></td>
+                <td><input type="button" value="3" onclick="gopi()" /></td>
+                <td><input type="button" value="/" onclick="gopi()" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="gopi()" /></td>
+                <td><input type="button" value="5" onclick="gopi()" /></td>
+                <td><input type="button" value="6" onclick="gopi()" /></td>
+                <td><input type="button" value="-" onclick="gopi()" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="gopi()" /></td>
+                <td><input type="button" value="8" onclick="gopi()" /></td>
+                <td><input type="button" value="9" onclick="gopi()" /></td>
+                <td><input type="button" value="+" onclick="gopi()" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="." onclick="gopi()" /></td>
+                <td><input type="button" value="0" onclick="gopi()" /></td>
+                <!--equal taking function solve in this case-->
+                <td><input type="button" value="=" onclick="solve()" /></td>
+                <td><input type="button" value="c" onclick="clr()" /></td>
+            </tr>
+        </table>
+    </div>
+    <!--script dom -->
+    <script>
+        function gopi() {
+            document.getElementById("result").value
+        }
+        function solve() {
+            let x = document.getElementById("result").value
+            let y = eval(x)
+            document.getElementById("result").value = y
+        }
+        function clr() {
+            document.getElementById("result").value = ""
+        }
+        function del() {
+            let x = document.getElementById("result")
+
+        }
+    </script>
+</body>
+
+</html>
