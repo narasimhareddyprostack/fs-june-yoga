@@ -1,14 +1,12 @@
 import React from 'react'
 import Navbar from './Navbar/Navbar'
-import Display from './Components/Display'
-import CompA from './PropsDrill/CompA'
+import User from './PropsEx/User'
 class App extends React.Component {
     render() {
         return (
             <div>
                 <Navbar />
-                {/*   <Display /> */}
-                <CompA />
+                <User />
             </div>
         )
     }
