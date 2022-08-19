@@ -4,14 +4,14 @@ import Navbar from './Navbar/Navbar'
 /* import Employee from './Employee/Employee'
 import Counter from './Counter/Counter' */
 import Salary from './Salary/Salary'
-import Login from './FormsEx/Login'
+import Registration from './FormsEx/Registration'
 class App extends React.Component {
     render() {
         return <div>
             <Navbar />
             <h1>App Component</h1>
             <hr />
-            <Login />
+            <Registration />
 
             {/*  <Employee /> */}
             {/* <Counter /> */}
