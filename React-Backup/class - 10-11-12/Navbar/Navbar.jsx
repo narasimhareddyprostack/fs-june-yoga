@@ -9,6 +9,7 @@ class Navbar extends Component {
                     <li className="nav-list">
                         <Link className="nav-link" to="/contacts">Contact App</Link></li>
                     <li className="nav-list"> <Link className="nav-link" to="/message">Message Hook </Link></li>
+                    <li className="nav-list"> <Link className="nav-link" to="/product">Product Hook </Link></li>
                 </ul>
             </div>
         </nav>

@@ -1,20 +1,10 @@
-import React, { Component } from 'react'
-import Navbar from './Navbar/Navbar'
-import Message from './Message/Message'
-import ContactApp from './ContactApp/ContactApp'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-class App extends Component {
-    render() {
-        return <React.Fragment>
-            <Router>
-                <Navbar />
-                <Routes>
-                    <Route path="/contacts" element={<ContactApp />} />
-                    <Route path="/message" element={<Message />} />
-                </Routes>
-            </Router>
-        </React.Fragment>
-    }
+import React from 'react'
+const App = () => {
+    return (
+        <div>
+
+        </div>
+    )
 }
 
 export default App
