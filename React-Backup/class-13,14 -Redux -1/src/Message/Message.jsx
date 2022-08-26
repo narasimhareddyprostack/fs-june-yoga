@@ -2,7 +2,6 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { gmAction, gnAction } from '../redux/Message/message.action'
 const Message = () => {
-
     let message = useSelector((state) => {
         return state.msg;
     })
