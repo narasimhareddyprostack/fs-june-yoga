@@ -1,17 +1,60 @@
 const http = require('http')
-const dotenv = require('dotenv')
-const chalk = require('chalk')
+const fs = require('fs')
+const path = require('path')
 
-dotenv.config({ path: 'config/config.env' })
-console.log(process.env.PORT)
-
-let server = http.createServer((req, resp) => {
-    resp.writeHead(200, { 'Content-Type': 'text/html' })
-    resp.end("<h1>Hello,GM. MR Rahul JI.sdfdssdfasdfafd.</h1>")
+let server = http.createServer((request, response) => {
+    let url = request.url;
+    console.log(url)
+    response.writeHead(200, { 'Content-Type': 'text/html' })
+    if (url === '/') {
+        fs.readFile(path.join(__dirname, 'static', 'index.html'), 'utf-8', (err, data) => {
+            if (err) throw err
+            response.end(data)
+        })
+    }
+    else
+        if (url === "/about") {
+            fs.readFile(path.join(__dirname, 'static', 'about.html'), 'utf-8', (err, data) => {
+                if (err) throw err
+                response.end(data)
+            })
+        }
+        else
+            if (url === '/service') {
+                fs.readFile(path.join(__dirname, 'static', 'service.html'), 'utf-8', (err, data) => {
+                    if (err) throw err
+                    response.end(data)
+                })
+            }
+            else
+                if (url === "/home") {
+                    fs.readFile(path.join(__dirname, 'static', 'index.html'), 'utf-8', (err, data) => {
+                        if (err) throw err
+                        response.end(data)
+                    })
+                }
+                else
+                    if (url === "/product") {
+                        fs.readFile(path.join(__dirname, 'static', 'product.html'), 'utf-8', (err, data) => {
+                            if (err) throw err
+                            response.end(data)
+                        })
+                    }
+                    else
+                        if (url === '/contact') {
+                            fs.readFile(path.join(__dirname, 'static', 'contact.html'), 'utf-8', (err, data) => {
+                                if (err) throw err
+                                response.end(data)
+                            })
+                        }
+                        else {
+                            fs.readFile(path.join(__dirname, 'static', '404.html'), 'utf-8', (err, data) => {
+                                if (err) throw err
+                                response.end(data)
+                            })
+                        }
 })
-
-server.listen(process.env.PORT, () => {
-    console.log(chalk.red(`Buyya sleepy..Server is Running be carefull your port number is ${process.env.PORT}`))
-}
-)
-//console.log(chalk.blue("Hello,GM"))
+server.listen(8080, (err) => {
+    if (err) throw err
+    console.log(`Server Running one PORT! 8080`)
+})
