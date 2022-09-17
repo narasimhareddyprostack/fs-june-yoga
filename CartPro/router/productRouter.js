@@ -22,6 +22,19 @@ router.get("/products", async (request, response) => {
     response.status(200).json(products)
 })
 /*
+Info: Display In Active Product
+URL: http://127.0.0.1:8080/api/products
+METHOD:GET
+Req Fields: No  
+*/
+router.get("/products/inActive", async (request, response) => {
+    let products = await Product.find({ status: 'InActive' });
+    if (!products) {
+        response.status(401).json({ message: "Product Not Found" })
+    }
+    response.status(200).json(products)
+})
+/*
 Info: Get Single Product 
 URL: http://127.0.0.1:8080/api/products/:id
 METHOD:GET
@@ -71,4 +84,16 @@ router.post("/product/", async (request, response) => {
 
 })
 
+router.delete("/product/:id", async (request, response) => {
+    try {
+        let productId = request.params.id
+        product = await Product.findByIdAndDelete(productId)
+        response.status(200).json({ restult: "Product Delete Successfully" })
+
+    } catch (err) {
+        console.log(err)
+        return response.status(500).json({ message: message })
+    }
+
+})
 module.exports = router;
